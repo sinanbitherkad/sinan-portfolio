@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sinan Akbar – Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9ECF2; --surface:#DDE2EC; --text:#0F1F3D; --muted:#4A5873; --line:#B9C2D3;
+  --accent:#F4B63F; --on-accent:#0F1F3D;
+  --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --body:'Newsreader',Georgia,'Times New Roman',serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#0B1730; --surface:#12234A; --text:#EAEEF7; --muted:#9FADC8; --line:#27396A; }
+}
+:root[data-theme="dark"]{ --bg:#0B1730; --surface:#12234A; --text:#EAEEF7; --muted:#9FADC8; --line:#27396A; }
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:19px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--display);font-size:16px}
+header nav{display:flex;gap:22px}
+header a{text-decoration:none}
+header a:hover{text-decoration:underline;text-underline-offset:5px}
+.hero{padding:6vh 0 9vh}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(64px,17vw,210px);line-height:.86;letter-spacing:-.04em;margin:0}
+.hero h1 span{display:block}
+.hero h1 span:last-child{margin-left:.35em;color:transparent;-webkit-text-stroke:2px var(--text)}
+.intro{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:48px;align-items:end}
+.intro p{margin:0;max-width:34em;font-size:clamp(20px,2.2vw,26px);line-height:1.45}
+.swatches{display:flex;gap:10px;align-items:center;justify-content:flex-end;font-family:var(--display);font-size:14px;color:var(--muted)}
+.swatches button{width:34px;height:34px;border-radius:50%;border:2px solid var(--text);cursor:pointer;padding:0}
+.swatches button[aria-pressed="true"]{box-shadow:0 0 0 4px var(--bg),0 0 0 6px var(--text)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,56px);letter-spacing:-.02em;line-height:1;margin:0 0 12px}
+.lede{color:var(--muted);max-width:36em;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.plate{border-radius:6px;min-height:280px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.plate h3{font-family:var(--display);font-weight:800;margin:0;line-height:.95;letter-spacing:-.02em}
+.plate p{margin:8px 0 0;font-size:16px;line-height:1.4}
+.cap{font-family:var(--display);font-size:14px}
+.p1{grid-column:span 4;background:var(--text);color:var(--bg);min-height:360px}
+.p1 h3{font-size:clamp(48px,9vw,110px)}
+.p1 .mark{position:absolute;right:-30px;top:-30px;width:220px;height:220px;border-radius:50%;background:var(--accent)}
+.p1 .mark::after{content:"";position:absolute;inset:55px;border-radius:50%;background:var(--text)}
+.p2{grid-column:span 2;background:var(--accent);color:var(--on-accent)}
+.p2 h3{font-size:34px}
+.p3,.p4,.p5{grid-column:span 2;background:var(--surface)}
+.p3 h3,.p4 h3,.p5 h3{font-size:30px}
+.p3 .bar,.p4 .bar,.p5 .bar{height:70px;border-radius:4px;margin-bottom:16px}
+.p3 .bar{background:var(--accent)}
+.p4 .bar{background:var(--text)}
+.p5 .bar{background:repeating-linear-gradient(90deg,var(--accent) 0 18px,var(--text) 18px 36px)}
+.p6{grid-column:span 3;background:var(--surface);min-height:340px}
+.p7{grid-column:span 3;background:var(--accent);color:var(--on-accent);min-height:340px}
+.p6 h3,.p7 h3{font-size:clamp(34px,5vw,56px)}
+.tag{display:inline-block;border:1.5px solid currentColor;border-radius:99px;padding:2px 12px;font-family:var(--display);font-size:13px;width:max-content}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.skills h3{font-family:var(--display);font-size:22px;margin:0 0 6px}
+.skills p{margin:0;color:var(--muted);font-size:17px}
+.contact a.big{font-family:var(--display);font-weight:800;font-size:clamp(26px,5.4vw,64px);letter-spacing:-.02em;text-decoration:none;word-break:break-word;display:inline-block;border-bottom:4px solid var(--accent)}
+.contact a.big:hover{background:var(--accent);color:var(--on-accent)}
+.contact .row{margin-top:28px;font-family:var(--display);font-size:18px;display:flex;flex-wrap:wrap;gap:8px 32px}
+footer{padding:28px 0 40px;font-family:var(--display);font-size:14px;color:var(--muted)}
+.hero h1 span{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:last-child{animation-delay:.12s}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.hero h1 span{animation:none}html{scroll-behavior:auto}}
+@media (max-width:760px){
+  .intro{grid-template-columns:1fr}
+  .swatches{justify-content:flex-start}
+  .p1,.p2,.p3,.p4,.p5,.p6,.p7{grid-column:span 6}
+  body{font-size:18px}
+  header nav{gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <strong>Sinan Akbar</strong>
+    <nav aria-label="Main"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1><span>Sinan</span><span>Akbar</span></h1>
+      <div class="intro">
+        <p>I’m a graphic designer and video editor from Kerala. I make logos, brand identities, packaging and posters that look clear and feel rooted in the people they’re made for.</p>
+        <div class="swatches" role="group" aria-label="Choose accent colour">
+          <span>Pick a colour</span>
+          <button type="button" data-c="#F4B63F" data-on="#0F1F3D" style="background:#F4B63F" aria-label="Marigold" aria-pressed="true"></button>
+          <button type="button" data-c="#FF6B57" data-on="#0F1F3D" style="background:#FF6B57" aria-label="Coral" aria-pressed="false"></button>
+          <button type="button" data-c="#2FC7B5" data-on="#0F1F3D" style="background:#2FC7B5" aria-label="Teal" aria-pressed="false"></button>
+          <button type="button" data-c="#8C84FF" data-on="#0F1F3D" style="background:#8C84FF" aria-label="Violet" aria-pressed="false"></button>
+        </div>
+      </div>
+    </div>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <p class="lede">Logo and brand identity, packaging, and event posters. Each tile below is a placeholder you can swap for the finished artwork.</p>
+      <div class="grid">
+        <article class="plate p1">
+          <div class="mark" aria-hidden="true"></div>
+          <span class="tag">Logo &amp; brand identity</span>
+          <div><h3>Al Laban</h3><p>Logo and brand identity for Bahebbah.</p></div>
+        </article>
+        <article class="plate p2">
+          <span class="tag">Packaging</span>
+          <div><h3>Salankatia</h3><p>Package design.</p></div>
+        </article>
+        <article class="plate p3">
+          <div><div class="bar" aria-hidden="true"></div><span class="tag">Packaging</span></div>
+          <div><h3>Ruh Hayati</h3><p>Package design.</p></div>
+        </article>
+        <article class="plate p4">
+          <div><div class="bar" aria-hidden="true"></div><span class="tag">Packaging</span></div>
+          <div><h3>Al Laban Qashtuta</h3><p>Package design.</p></div>
+        </article>
+        <article class="plate p5">
+          <div><div class="bar" aria-hidden="true"></div><span class="tag">Brand</span></div>
+          <div><h3>Bahebbah</h3><p>Identity system.</p></div>
+        </article>
+        <article class="plate p6">
+          <span class="tag">Poster</span>
+          <div><h3>Sahityotsav</h3><p>Event poster for SSF Nelakotta Sector.</p></div>
+        </article>
+        <article class="plate p7">
+          <span class="tag">Poster</span>
+          <div><h3>Bueno Chocola</h3><p>Promotional poster.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>What I do</h2>
+      <p class="lede">I work with small businesses, community groups and student events who need design that is easy to read and easy to remember.</p>
+      <div class="skills">
+        <div><h3>Logo design</h3><p>Simple marks that work small on a bottle cap and large on a shopfront.</p></div>
+        <div><h3>Brand identity</h3><p>Colours, type and layouts that keep every piece looking like it belongs together.</p></div>
+        <div><h3>Packaging</h3><p>Labels and boxes that are clear on the shelf.</p></div>
+        <div><h3>Posters and video</h3><p>Event posters and edited video for social media and screens.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Let’s work together</h2>
+      <p class="lede">Tell me what you’re making and when you need it.</p>
+      <a class="big" href="mailto:sinanbitherkad@gmail.com">sinanbitherkad@gmail.com</a>
+      <div class="row"><a href="tel:+919943007964">+91 99430 07964</a></div>
+    </section>
+  </main>
+
+  <footer>© 2026 Sinan Akbar</footer>
+</div>
+<script>
+(function(){
+  var root=document.documentElement;
+  var btns=document.querySelectorAll('.swatches button');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      root.style.setProperty('--accent',b.dataset.c);
+      root.style.setProperty('--on-accent',b.dataset.on);
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    });
+  });
+})();
+</script>
+</body>
+</html>
